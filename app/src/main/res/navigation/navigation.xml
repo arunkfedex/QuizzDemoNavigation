@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.arun.androidtutsforu.quizzdemonavigation.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_qaFragment"
+            app:destination="@id/qaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/qaFragment"
+        android:name="com.arun.androidtutsforu.quizzdemonavigation.QAFragment"
+        android:label="QaFragment" >
+        <action
+            android:id="@+id/action_qaFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/qaFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.arun.androidtutsforu.quizzdemonavigation.ResultFragment"
+        android:label="ResultFragment" >
+        <action
+            android:id="@+id/action_resultFragment_to_qaFragment"
+            app:destination="@id/qaFragment"
+            app:popUpTo="@id/welcomeFragment" />
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
+        <argument
+            android:name="numCrctAnswer"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.arun.androidtutsforu.quizzdemonavigation.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.arun.androidtutsforu.quizzdemonavigation.RulesFragment"
+        android:label="RulesFragment" />
+</navigation>
